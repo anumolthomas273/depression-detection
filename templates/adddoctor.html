@@ -1,0 +1,101 @@
+
+
+{% load static %}
+{% block content %}
+{% include 'admin/menu.html' %}
+
+<br><br>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                       
+<br><br>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                ADD DOCTOR
+                            </div>
+                            <div class="card-body">
+<div class="container">
+
+ <form action="adddoctor" method="POST" >
+						  {% csrf_token %}
+
+
+
+
+                           
+                             <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Enter Name" name="name">
+                            </div>
+							<br><br>
+							 <div class="form-group">
+                              <input type="email" class="form-control" placeholder=" Enter Email" name="email">
+                            </div>
+							<br><br>
+							
+							 <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Enter Address" name="address">
+                            </div>
+							<br><br>
+							
+							
+							 <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Enter Phone" pattern='[0-9]{10}' name="phone">
+                            </div>
+							<br><br>
+							
+							 <div class="form-group">
+                              <input type="password" class="form-control" placeholder=" Enter Password" pattern='[0-9]{4}' name="password">
+                            </div>
+							<br><br>
+							
+							
+							 <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Enter Age" name="age">
+                            </div>
+							<br><br>
+							
+							
+							 <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Enter Specialization" name="specialization">
+                            </div>
+							<br><br>
+							
+							 <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Enter Experience" name="experience">
+                            </div>
+							<br><br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+                            <center>
+			  <div class="col-6">
+                                    <button class="btn btn-danger w-100 py-3" type="submit" name="submit" value="submit"> ADD</button>
+                                </div></center>
+                          </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+				
+			
+            </div>
+        </div>
+
+{% include 'admin/footer.html' %}
+		{% endblock%}

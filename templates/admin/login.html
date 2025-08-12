@@ -1,0 +1,87 @@
+          
+{% load static %}
+{% block content %}
+{% include 'admin/menu.html' %}
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <ol class="breadcrumb mb-4">
+                        </ol>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-chart-area me-1"></i>
+                                Add Staff
+                            </div>
+                            <div class="card-body">
+							
+							<form method="POST" enctype="multipart/form-data" action="addmentor">
+{% csrf_token %}
+<table>
+<tr>
+<td>Internship Name:</td>
+<td>
+<select name="course" required class="form-control">
+{% for i in result %}
+<option value="{{i.Name}}">{{i.Name}}</option>
+{% endfor %}
+</select>
+<br><br>
+</td>
+</tr>
+<tr>
+<td>Name:</td>
+<td><input type="text" required name="name" class="form-control"><br><br></td>
+</tr>
+<tr>
+<td>Email:</td>
+<td><input type="email" required name="email"class="form-control"><br><br></td>
+</tr>
+<td>Password:</td>
+<td><input type="text" required name="password"class="form-control"><br><br></td>
+<tr>
+<td>Username:</td>
+<td><input type="text" required name="username"class="form-control"><br><br></td>
+</tr>
+<tr>
+<td>Phone.No:</td>
+<td><input type="text" required pattern="[6789][0-9]{9}" name="phoneno" class="form-control"><br><br></td>
+</tr>
+
+<tr>
+<td>Address:</td>
+<td><input type="text" required name="address" class="form-control"><br><br></td>
+</tr>
+<tr>
+<td>Image:</td>
+<td><input type="file" required name="f1" class="form-control"><br><br></td>
+</tr>
+<td><input type="submit" name="SUBMIT" class="btn btn-success"></td>
+</tr>
+</td>
+<table>
+</br>
+</form>
+							
+							
+							</div>
+                        </div>
+                      
+                    </div>
+                </main>
+
+	 <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Developed By Liji B Thomas</div>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>	
+</div>		
+  {% include 'admin/footer.html' %}
+		{% endblock%}
+

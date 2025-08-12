@@ -1,0 +1,66 @@
+
+
+{% load static %}
+{% block content %}
+{% include 'admin/menu.html' %}
+
+<br><br>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                       
+<br><br>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                ADD Music/Video
+                            </div>
+                            <div class="card-body">
+<div class="container">
+
+ <form action="addmusic" method="POST" enctype="multipart/form-data">
+						  {% csrf_token %}
+
+
+
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder=" Enter Remedy" name="name">
+                          </div> <br> <br>
+						   <div class="form-group">
+<select class="form-control" name="emotion">
+							
+							<option>angry</option>
+							<option>sad</option>
+							<option>happy</option>
+							<option>surprise</option>
+							<option>fear</option>
+							<option>disgust</option>
+							<option>neutral</option>
+							
+							
+							</select>                            </div><br><br>
+                           
+                             <div class="form-group">
+                              Music:<input type="file" class="form-control" placeholder=" Enter Remedy" name="music">
+                            </div><br><br><br>
+							<div class="form-group">
+                              Video:<input type="file" class="form-control" placeholder=" Enter Remedy" name="video" height="100" width="50">
+                            </div>
+							<br><br><br><br>
+                            <center>
+			  <div class="col-6">
+                                    <button class="btn btn-danger w-100 py-3" type="submit" name="submit" value="submit"> ADD</button>
+                                </div></center>
+                          </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+				
+			
+            </div>
+        </div>
+
+{% include 'admin/footer.html' %}
+		{% endblock%}

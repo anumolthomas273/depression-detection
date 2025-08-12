@@ -1,0 +1,56 @@
+
+
+{% load static %}
+{% block content %}
+{% include 'admin/menu.html' %}
+
+<br><br>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                       
+<br><br>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                ADD REMEDY
+                            </div>
+                            <div class="card-body">
+<div class="container">
+
+ <form action="addremedys" method="POST">
+						  {% csrf_token %}
+						   <div class="form-group">
+<select class="form-control" name="emotion">
+							
+							<option>angry</option>
+							<option>sad</option>
+							<option>happy</option>
+							<option>surprise</option>
+							<option>fear</option>
+							<option>disgust</option>
+							
+							
+							</select>                            </div><br><br>
+                           
+                             <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Enter Remedy" name="disease">
+                            </div>
+							<br><br>
+                            <center>
+			  <div class="col-6">
+                                    <button class="btn btn-danger w-100 py-3" type="submit" name="submit" value="submit"> Register</button>
+                                </div></center>
+                          </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+				
+			
+            </div>
+        </div>
+
+{% include 'admin/footer.html' %}
+		{% endblock%}
